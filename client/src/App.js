@@ -18,7 +18,6 @@ import Profile from './components/profile/Profile'
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 
-
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -62,6 +61,5 @@ const App = () => {
     </Provider>
   )
 }
-
 
 export default App;
