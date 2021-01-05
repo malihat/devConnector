@@ -9,7 +9,6 @@ const app = express();
 app.use(express.json({ extended: false }));
 
 dotenv.config({ path: './config.env' });
-// "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
 
 
 // Define routes
