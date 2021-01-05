@@ -17,15 +17,7 @@ app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/profile', require('./routes/api/profile'));
 app.use('/api/post', require('./routes/api/post'));
 
-// Server static assets in production
-// if(process.env.NODE_ENV === 'production') {
-//   // Set static folder 
-//   app.use(express.static('client/build'));
 
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  // })
-// }
 
 // Connect to mongodb database
 mongoose.connect(process.env.DATABASE, {
@@ -41,6 +33,16 @@ mongoose.connect(process.env.DATABASE, {
     console.log(err);
     process.exit(1);
   });
+
+// Server static assets in production
+if(process.env.NODE_ENV === 'production') {
+  // Set static folder 
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+}
 
 const PORT = process.env.PORT || 5000;
 
