@@ -5,10 +5,10 @@
   "main": "server.js",
 
   "engines": {
-    "node": "14.15.2",
-    "npm": "6.4.1"
-},
-  "scripts": {
+    "node": "14.15.x",
+    "npm": "6.4.x"
+  },
+  "scripts": {   
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
